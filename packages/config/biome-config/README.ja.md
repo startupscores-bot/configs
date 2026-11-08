@@ -16,7 +16,7 @@ bun add -D @yuu1111/biome-config
 
 ```json
 {
-	"$schema": "https://biomejs.dev/schemas/2.6.4/schema.json",
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"extends": [
 		"@yuu1111/biome-config/biome",
 		"@yuu1111/biome-config/plugins/core"
@@ -59,7 +59,7 @@ bun add -D @yuu1111/biome-config
 
 ```json
 {
-	"$schema": "https://biomejs.dev/schemas/2.6.4/schema.json",
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"extends": [
 		"@yuu1111/biome-config/biome"
 	]
@@ -72,7 +72,7 @@ CSSのformatterとlinterを足し、Tailwind directiveを有効にする
 
 ```json
 {
-	"$schema": "https://biomejs.dev/schemas/2.6.4/schema.json",
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"extends": [
 		"@yuu1111/biome-config/react"
 	]

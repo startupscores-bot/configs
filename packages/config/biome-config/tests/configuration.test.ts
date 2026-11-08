@@ -112,7 +112,7 @@ function readJson(file: string): JsonObject {
 }
 
 describe("published Biome configurations", () => {
-	test("published JSON has no nested extends and React contains base settings", () => {
+	test("published JSON has no schema version or nested extends and React contains base settings", () => {
 		const base = readJson(join(packageDirectory, "base.json"));
 		const react = readJson(join(packageDirectory, "react.json"));
 
@@ -123,9 +123,9 @@ describe("published Biome configurations", () => {
 			"plugins-network.json",
 			"plugins-discord.json",
 		]) {
-			expect(readJson(join(packageDirectory, file))).not.toHaveProperty(
-				"extends",
-			);
+			const config = readJson(join(packageDirectory, file));
+			expect(config).not.toHaveProperty("$schema");
+			expect(config).not.toHaveProperty("extends");
 		}
 
 		expect(react).toMatchObject(base);
